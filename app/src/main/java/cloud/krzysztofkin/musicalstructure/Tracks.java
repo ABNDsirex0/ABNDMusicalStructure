@@ -15,16 +15,22 @@ public class Tracks extends ArrayList<Track> {
     }
 
     /**
-     * Constructs list with sample data.
+     * adds sample data.
      *
      * @param albums
      * @param tracks
      * @param covers
      */
-    public Tracks(int albums, int tracks, int covers) {
+    public void addSampleData(int albums, int tracks, int covers) {
+        String[] coversList = {"ic_vinyl_blue", "ic_vinyl_cyan", "ic_vinyl_green", "ic_vinyl_magenta", "ic_vinyl_red", "ic_vinyl_yellow"};
+        int coverNr = 0;
         for (int a = 1; a <= albums; a++) {
             for (int t = 1; t <= tracks; t++) {
-                add(new Track("Album " + a, "track " + t, "ic_vinyl_red"));
+                add(new Track("Album " + a, "track " + t, coversList[coverNr]));
+            }
+            coverNr++;
+            if (coverNr >= coversList.length) {
+                coverNr = 0;
             }
         }
     }

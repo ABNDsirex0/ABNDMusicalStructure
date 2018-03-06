@@ -25,7 +25,7 @@ public class AlbumAdapter extends ArrayAdapter<Track> {
      * @param objects The objects to represent in the ListView.
      */
     AlbumAdapter(@NonNull Context context, @NonNull Tracks objects) {
-        super(context, 0, objects);
+        super(context, 0, objects.getAlbums());
     }
 
     @NonNull

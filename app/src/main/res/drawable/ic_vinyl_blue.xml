@@ -3,7 +3,7 @@
     xmlns:aapt="http://schemas.android.com/aapt" xmlns:android="http://schemas.android.com/apk/res/android">
     <path android:fillColor="#28170b" android:fillType="evenOdd"
         android:pathData="M200,200m185.1,0a185.1,185.1 65.3,1 0,-370.2 0a185.1,185.1 65.3,1 0,370.2 0" android:strokeWidth="1.44296587"/>
-    <path android:fillColor="#00c853" android:fillType="evenOdd"
+    <path android:fillColor="#1565c0" android:fillType="evenOdd"
         android:pathData="M200,200m86.1,0a86.1,86.1 55.2,1 0,-172.2 0a86.1,86.1 55.2,1 0,172.2 0" android:strokeWidth="0.67110258"/>
     <path android:fillColor="#ffffff" android:fillType="evenOdd"
         android:pathData="M200,200m6.6,0a6.6,6.6 0,1 0,-13.2 0a6.6,6.6 0,1 0,13.2 0" android:strokeWidth="0.05133066"/>

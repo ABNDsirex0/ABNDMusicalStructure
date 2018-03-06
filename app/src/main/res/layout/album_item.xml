@@ -17,12 +17,14 @@
         android:layout_gravity="center_horizontal"
         tools:src="@drawable/ic_vinyl_red"
         android:paddingBottom="16dp" />
+
     <TextView
-        android:textColor="#FFFFFF"
-        android:textStyle="bold"
         android:id="@+id/album_name"
-        android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="Album 1"/>
+        android:layout_gravity="center"
+        android:fontFamily="@font/audiowide"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        tools:text="Album 1" />
 </LinearLayout>
