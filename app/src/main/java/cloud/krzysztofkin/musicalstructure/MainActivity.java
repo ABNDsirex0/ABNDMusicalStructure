@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         //create discography with sample data
         discography = new Tracks();
-        discography.addSampleData(21, 5, 3);
+        discography.addSampleData(21, 5);
         AlbumsAdapter adapter = new AlbumsAdapter(this, discography);
         GridView listView = findViewById(R.id.album_list);
         listView.setAdapter(adapter);

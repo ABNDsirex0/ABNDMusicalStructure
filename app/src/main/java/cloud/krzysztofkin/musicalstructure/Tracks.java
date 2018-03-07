@@ -16,13 +16,11 @@ public class Tracks extends ArrayList<Track> {
 
     /**
      * adds sample data.
-     *
-     * @param albums
-     * @param tracks
-     * @param covers
+     *  @param albums quantity
+     * @param tracks quantity
      */
-    public void addSampleData(int albums, int tracks, int covers) {
-        String[] coversList = {"ic_vinyl_blue", "ic_vinyl_cyan", "ic_vinyl_green", "ic_vinyl_magenta", "ic_vinyl_red", "ic_vinyl_yellow"};
+    public void addSampleData(int albums, int tracks) {
+        String[] coversList = {"ic_vinyl_blue", "ic_vinyl_pink", "ic_vinyl_cyan", "ic_vinyl_green", "ic_vinyl_magenta", "ic_vinyl_red", "ic_vinyl_yellow"};
         int coverNr = 0;
         for (int a = 1; a <= albums; a++) {
             for (int t = 1; t <= tracks; t++) {
@@ -38,7 +36,7 @@ public class Tracks extends ArrayList<Track> {
     /**
      * chooses one track from each album
      *
-     * @return list of tracks one by album
+     * @return list of tracks - one by album
      */
     public Tracks getAlbums() {
         Tracks albums = new Tracks();

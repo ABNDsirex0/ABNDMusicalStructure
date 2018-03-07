@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +17,7 @@ import android.widget.TextView;
 
 public class AlbumsAdapter extends ArrayAdapter<Track> {
     Tracks discography;
+
     /**
      * Constructor
      *
@@ -47,9 +47,9 @@ public class AlbumsAdapter extends ArrayAdapter<Track> {
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getContext(),TracksOnAlbumActivity.class);
-                i.putParcelableArrayListExtra("discography",discography);
-                i.putExtra("album",currentAlbum.getAlbum());
+                Intent i = new Intent(getContext(), TracksOnAlbumActivity.class);
+                i.putParcelableArrayListExtra("discography", discography);
+                i.putExtra("album", currentAlbum.getAlbum());
                 getContext().startActivity(i);
             }
         };

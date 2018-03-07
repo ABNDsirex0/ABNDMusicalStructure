@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="cloud.krzysztofkin.musicalstructure.MainActivity"
-    android:background="@drawable/bg_floor">
+    android:background="@drawable/bg_halftone">
 
     <GridView
         android:id="@+id/album_list"
