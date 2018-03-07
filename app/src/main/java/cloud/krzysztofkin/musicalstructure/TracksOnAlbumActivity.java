@@ -20,7 +20,7 @@ public class TracksOnAlbumActivity extends AppCompatActivity {
         ArrayList<Track> arrayListFromIntent = i.getParcelableArrayListExtra("discography");
         for(Track track:arrayListFromIntent)
             discography.add(track);
-        for(Track track:discography.getAlbums())
+        for(Track track:discography.getTracksFromAlbum(albumName))
             Log.i("TracksOnAlbum",track.getTitle());
     }
 }

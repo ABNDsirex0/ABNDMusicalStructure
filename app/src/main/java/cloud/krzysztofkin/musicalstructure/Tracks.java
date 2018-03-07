@@ -58,4 +58,13 @@ public class Tracks extends ArrayList<Track> {
         }
         return albums;
     }
+
+    public Tracks getTracksFromAlbum(String album) {
+        Tracks tracks = new Tracks();
+        for (int a = 0; a < size(); a++) {
+            if (get(a).getAlbum().equals(album))
+                tracks.add(get(a));
+        }
+        return tracks;
+    }
 }
