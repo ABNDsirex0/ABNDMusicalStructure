@@ -8,21 +8,21 @@ import android.os.Parcelable;
  */
 
 public class Track implements Parcelable {
-    String album;
-    String title;
-    String cover;
+    private String album;
+    private String title;
+    private String cover;
 
-    public Track(String album, String title, String cover) {
+    Track(String album, String title, String cover) {
         this.album = album;
         this.title = title;
         this.cover = cover;
     }
 
-    public String getAlbum() {
+    String getAlbum() {
         return album;
     }
 
-    public String getTitle() {
+    String getTitle() {
         return title;
     }
 
@@ -73,13 +73,13 @@ public class Track implements Parcelable {
         }
     };
 
-    private Track(Parcel in) {
+    public Track(Parcel in) {
         album = in.readString();
         title = in.readString();
         cover = in.readString();
     }
 
-    public String getCover() {
+    String getCover() {
         return cover;
     }
 }

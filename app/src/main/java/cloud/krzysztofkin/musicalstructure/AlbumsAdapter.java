@@ -1,6 +1,7 @@
 package cloud.krzysztofkin.musicalstructure;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -11,21 +12,21 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.List;
-
 /**
  * Created by Krzysztof Kin on 05.03.2018.
  */
 
-public class AlbumAdapter extends ArrayAdapter<Track> {
+public class AlbumsAdapter extends ArrayAdapter<Track> {
+    Tracks discography;
     /**
      * Constructor
      *
      * @param context The current context.
      * @param objects The objects to represent in the ListView.
      */
-    AlbumAdapter(@NonNull Context context, @NonNull Tracks objects) {
+    AlbumsAdapter(@NonNull Context context, @NonNull Tracks objects) {
         super(context, 0, objects.getAlbums());
+        discography = objects;
     }
 
     @NonNull
@@ -46,12 +47,14 @@ public class AlbumAdapter extends ArrayAdapter<Track> {
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i("Listener",currentAlbum.getAlbum());
+                Intent i = new Intent(getContext(),TracksOnAlbumActivity.class);
+                i.putParcelableArrayListExtra("discography",discography);
+                i.putExtra("album",currentAlbum.getAlbum());
+                getContext().startActivity(i);
             }
         };
         albumCover.setOnClickListener(listener);
         albumName.setOnClickListener(listener);
-
         return listItemView;
     }
 }

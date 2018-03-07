@@ -26,7 +26,7 @@ public class Tracks extends ArrayList<Track> {
         int coverNr = 0;
         for (int a = 1; a <= albums; a++) {
             for (int t = 1; t <= tracks; t++) {
-                add(new Track("Album " + a, "track " + t, coversList[coverNr]));
+                add(new Track("Album " + a, "track " + a + "." + t, coversList[coverNr]));
             }
             coverNr++;
             if (coverNr >= coversList.length) {
