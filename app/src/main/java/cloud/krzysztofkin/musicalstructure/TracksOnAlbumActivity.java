@@ -13,7 +13,7 @@ public class TracksOnAlbumActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         Tracks discography = new Tracks();
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_album);
+        setContentView(R.layout.tracks_on_album_activity);
         Intent i = getIntent();
         String albumName = i.getStringExtra("album");
         Log.v("TracksOnAlbumActivity","I'm on "+albumName);
