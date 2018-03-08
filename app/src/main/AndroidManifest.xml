@@ -22,7 +22,7 @@
             android:resource="@array/preloaded_fonts" />
 
         <activity android:name=".TracksOnAlbumActivity" />
-        <activity android:name=".player"></activity>
+        <activity android:name=".player" />
     </application>
 
 </manifest>

@@ -16,7 +16,6 @@ import android.widget.TextView;
  */
 
 public class TracksOnAlbumAdapter extends ArrayAdapter<Track> {
-    //Tracks discography;
 
     /**
      * Constructor
@@ -26,7 +25,6 @@ public class TracksOnAlbumAdapter extends ArrayAdapter<Track> {
      */
     TracksOnAlbumAdapter(@NonNull Context context, @NonNull Tracks objects) {
         super(context, 0, objects);
-        // discography = objects;
     }
 
     @NonNull
@@ -52,6 +50,7 @@ public class TracksOnAlbumAdapter extends ArrayAdapter<Track> {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getContext(), player.class);
+                //TODO przekazanie danych do odtwarzacza
                 //i.putParcelableArrayListExtra("discography",discography);
                 //i.putExtra("album",track.getAlbum());
                 getContext().startActivity(i);
