@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="cloud.krzysztofkin.musicalstructure.player"
+    tools:context="cloud.krzysztofkin.musicalstructure.PlayerActivity"
     android:padding="16dp"
     android:background="@drawable/bg_halftone">
 
@@ -20,7 +20,7 @@
         tools:src="@drawable/ic_vinyl_red" />
 
     <include
-        layout="@layout/track_on_album_item"
+        layout="@layout/tracks_item"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent"

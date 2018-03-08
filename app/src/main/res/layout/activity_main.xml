@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:numColumns="3"
-        tools:listitem="@layout/album_item"
+        tools:listitem="@layout/main_item"
         android:layout_weight="1"/>
     <LinearLayout
         android:background="@color/colorPrimaryDark"
@@ -26,6 +26,7 @@
             android:layout_height="wrap_content"
             android:text="Album list"/>
         <TextView
+            android:onClick="goToTrackList"
             android:textAlignment="center"
             android:layout_weight="1"
             android:background="@color/colorPrimary"
@@ -34,6 +35,7 @@
             android:layout_height="wrap_content"
             android:text="Track list"/>
         <TextView
+            android:onClick="goToPlay"
             android:textAlignment="center"
             android:layout_weight="1"
             android:background="@color/colorPrimary"

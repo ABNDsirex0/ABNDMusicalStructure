@@ -15,7 +15,7 @@ import android.widget.TextView;
  * Created by Krzysztof Kin on 05.03.2018.
  */
 
-public class TracksOnAlbumAdapter extends ArrayAdapter<Track> {
+public class TracksAdapter extends ArrayAdapter<Track> {
 
     /**
      * Constructor
@@ -23,7 +23,7 @@ public class TracksOnAlbumAdapter extends ArrayAdapter<Track> {
      * @param context The current context.
      * @param objects The objects to represent in the ListView.
      */
-    TracksOnAlbumAdapter(@NonNull Context context, @NonNull Tracks objects) {
+    TracksAdapter(@NonNull Context context, @NonNull Tracks objects) {
         super(context, 0, objects);
     }
 
@@ -32,7 +32,7 @@ public class TracksOnAlbumAdapter extends ArrayAdapter<Track> {
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         View listItemView = convertView;
         if (listItemView == null) {
-            listItemView = LayoutInflater.from(getContext()).inflate(R.layout.track_on_album_item, parent, false);
+            listItemView = LayoutInflater.from(getContext()).inflate(R.layout.tracks_item, parent, false);
         }
         final Track track = getItem(position);
 
@@ -49,7 +49,7 @@ public class TracksOnAlbumAdapter extends ArrayAdapter<Track> {
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getContext(), player.class);
+                Intent i = new Intent(getContext(), PlayerActivity.class);
                 //TODO przekazanie danych do odtwarzacza
                 //i.putParcelableArrayListExtra("discography",discography);
                 //i.putExtra("album",track.getAlbum());

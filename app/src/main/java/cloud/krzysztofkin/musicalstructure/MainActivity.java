@@ -1,7 +1,9 @@
 package cloud.krzysztofkin.musicalstructure;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.GridView;
 
 public class MainActivity extends AppCompatActivity {
@@ -14,8 +16,21 @@ public class MainActivity extends AppCompatActivity {
         //create discography with sample data
         discography = new Tracks();
         discography.addSampleData(21, 5);
-        AlbumsAdapter adapter = new AlbumsAdapter(this, discography);
+        MainAdapter adapter = new MainAdapter(this, discography);
         GridView listView = findViewById(R.id.album_list);
         listView.setAdapter(adapter);
+    }
+
+    public void goToTrackList(View view) {
+        Intent i = new Intent(this,TracksActivity.class);
+        i.putParcelableArrayListExtra("discography", discography);
+        i.putExtra("album", "");
+        startActivity(i);
+    }
+
+    public void goToPlay(View view) {
+        Intent i = new Intent(this,PlayerActivity.class);
+        i.putParcelableArrayListExtra("discography", discography);
+        startActivity(i);
     }
 }
