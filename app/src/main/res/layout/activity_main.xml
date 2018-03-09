@@ -21,33 +21,33 @@
         android:background="@color/colorPrimaryDark">
 
         <Button
-            android:background="@color/colorPrimaryDark"
             style="@style/list_font"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@color/colorPrimaryDark"
             android:padding="16dp"
             android:text="@string/album_list"
             android:textAlignment="center" />
 
         <Button
+            android:id="@+id/tracks_button"
             style="@style/list_font"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@color/colorPrimary"
-            android:onClick="goToTrackList"
             android:padding="16dp"
             android:text="@string/track_list"
             android:textAlignment="center" />
 
         <Button
+            android:id="@+id/play_button"
             style="@style/list_font"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@color/colorPrimary"
-            android:onClick="goToPlay"
             android:padding="16dp"
             android:text="@string/play_all"
             android:textAlignment="center" />
