@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:background="@color/colorPrimaryDark">
 
-        <TextView
+        <Button
             style="@style/list_font"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -30,16 +30,17 @@
             android:text="@string/album_list"
             android:textAlignment="center" />
 
-        <TextView
+        <Button
             style="@style/list_font"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@color/colorPrimaryDark"
             android:padding="16dp"
             android:text="@string/track_list"
             android:textAlignment="center" />
 
-        <TextView
+        <Button
             style="@style/list_font"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
