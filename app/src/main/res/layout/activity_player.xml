@@ -15,6 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="28dp"
+        android:contentDescription="@string/album_cover_description"
         tools:src="@drawable/ic_vinyl_red" />
 
     <LinearLayout
@@ -36,22 +37,22 @@
                 style="@style/list_font"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:text="Artist: " />
+                android:layout_gravity="end"
+                android:text="@string/artist" />
 
             <TextView
                 style="@style/list_font"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:text="Album: " />
+                android:layout_gravity="end"
+                android:text="@string/album" />
 
             <TextView
                 style="@style/list_font"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:text="Track: " />
+                android:layout_gravity="end"
+                android:text="@string/track" />
         </LinearLayout>
 
         <LinearLayout
@@ -63,15 +64,15 @@
                 style="@style/list_font"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:text="Alphabet" />
+                android:layout_gravity="start"
+                android:text="@string/artists_name" />
 
             <TextView
                 android:id="@+id/album_title"
                 style="@style/list_font"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="left"
+                android:layout_gravity="start"
                 tools:text="Album 1" />
 
             <TextView
@@ -79,7 +80,7 @@
                 style="@style/list_font"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="left"
+                android:layout_gravity="start"
                 tools:text="Track 1.1" />
         </LinearLayout>
 
@@ -102,18 +103,21 @@
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:contentDescription="@string/previous_button"
             android:onClick="onPrevious"
             app:srcCompat="@android:drawable/ic_media_previous" />
 
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:contentDescription="@string/play_button"
             android:onClick="onPlay"
             app:srcCompat="@android:drawable/ic_media_play" />
 
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:contentDescription="@string/next_button"
             android:onClick="onNext"
             app:srcCompat="@android:drawable/ic_media_next" />
     </LinearLayout>
@@ -139,32 +143,37 @@
         app:layout_constraintRight_toRightOf="parent">
 
         <TextView
+            style="@style/list_font"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@color/colorPrimary"
             android:onClick="goToMain"
             android:padding="16dp"
-            android:text="Album list"
+            android:text="@string/album_list"
             android:textAlignment="center" />
 
         <TextView
+            style="@style/list_font"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@color/colorPrimary"
             android:onClick="goToTrackList"
             android:padding="16dp"
-            android:text="Track list"
+            android:text="@string/track_list"
             android:textAlignment="center" />
 
         <TextView
+            style="@style/list_font"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@color/colorPrimaryDark"
             android:padding="16dp"
-            android:text="Play all"
+            android:text="@string/play_all"
             android:textAlignment="center" />
     </LinearLayout>
 </LinearLayout>

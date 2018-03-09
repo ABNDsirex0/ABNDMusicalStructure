@@ -24,14 +24,13 @@ public class PlayerActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Track track;
-        currentTrack = 0;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_player);
         Intent i = getIntent();
         tracksOnList = i.getParcelableArrayListExtra("tracksOnList");
         if (i.hasExtra("trackToPlay")) {
             track = i.getParcelableExtra("trackToPlay");
-            tracksToPlay = new ArrayList<Track>();
+            tracksToPlay = new ArrayList<>();
             tracksToPlay.add(track);
         } else {
             tracksToPlay = tracksOnList;

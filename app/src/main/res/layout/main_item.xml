@@ -3,27 +3,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:clipToPadding="false"
     android:orientation="vertical"
     android:padding="16dp"
-    android:clipToPadding="false"
     tools:background="@drawable/bg_halftone">
 
     <ImageView
-        android:clipToPadding="false"
-        android:elevation="8dp"
         android:id="@+id/album_cover"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        tools:src="@drawable/ic_vinyl_red"
+        android:clipToPadding="false"
+        android:contentDescription="@string/album_cover"
         android:paddingBottom="8dp"
-        android:contentDescription="Album cover" />
+        tools:src="@drawable/ic_vinyl_red" />
 
     <TextView
         android:id="@+id/album_name"
+        style="@style/list_font"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        tools:text="Album 1"
-        style="@style/list_font" />
+        tools:text="Album 1" />
 </LinearLayout>

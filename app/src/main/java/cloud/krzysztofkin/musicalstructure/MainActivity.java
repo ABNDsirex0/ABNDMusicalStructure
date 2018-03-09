@@ -21,12 +21,22 @@ public class MainActivity extends AppCompatActivity {
         listView.setAdapter(adapter);
     }
 
+    /**
+     * After click track list label starts TracksActivity
+     * onclick defined in layout
+     * @param view view clicked
+     */
     public void goToTrackList(View view) {
         Intent i = new Intent(this,TracksActivity.class);
         i.putParcelableArrayListExtra("tracksOnList", discography);
         startActivity(i);
     }
 
+    /**
+     * After click "play all" label starts PlayerActivity
+     * onclick defined in layout
+     * @param view view clicked
+     */
     public void goToPlay(View view) {
         Intent i = new Intent(this,PlayerActivity.class);
         i.putParcelableArrayListExtra("tracksOnList", discography);

@@ -20,31 +20,34 @@
         android:background="@color/colorPrimaryDark">
 
         <TextView
+            style="@style/list_font"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
             android:onClick="goToMain"
+            android:padding="16dp"
+            android:text="@string/album_list"
+            android:textAlignment="center" />
+
+        <TextView
+            style="@style/list_font"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="16dp"
+            android:text="@string/track_list"
+            android:textAlignment="center" />
+
+        <TextView
+            style="@style/list_font"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@color/colorPrimary"
-            android:padding="16dp"
-            android:text="Album list"
-            android:textAlignment="center" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:padding="16dp"
-            android:text="Track list"
-            android:textAlignment="center" />
-
-        <TextView
             android:onClick="goToPlay"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@color/colorPrimary"
             android:padding="16dp"
-            android:text="Play all"
+            android:text="@string/play_all"
             android:textAlignment="center" />
     </LinearLayout>
 </LinearLayout>

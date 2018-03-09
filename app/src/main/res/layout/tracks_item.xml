@@ -19,22 +19,22 @@
             style="@style/list_font"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:text="Artist: " />
+            android:layout_gravity="end"
+            android:text="@string/artist" />
 
         <TextView
             style="@style/list_font"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:text="Album: " />
+            android:layout_gravity="end"
+            android:text="@string/album" />
 
         <TextView
             style="@style/list_font"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:text="Track: " />
+            android:layout_gravity="end"
+            android:text="@string/track" />
     </LinearLayout>
 
     <LinearLayout
@@ -46,15 +46,15 @@
             style="@style/list_font"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:text="Alphabet" />
+            android:layout_gravity="start"
+            android:text="@string/artists_name" />
 
         <TextView
             android:id="@+id/album_title"
             style="@style/list_font"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="left"
+            android:layout_gravity="start"
             tools:text="Album 1" />
 
         <TextView
@@ -62,7 +62,7 @@
             style="@style/list_font"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="left"
+            android:layout_gravity="start"
             tools:text="Track 1.1" />
     </LinearLayout>
 
@@ -76,5 +76,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
+        android:contentDescription="@string/play_button"
         android:src="@android:drawable/ic_media_play" />
 </LinearLayout>

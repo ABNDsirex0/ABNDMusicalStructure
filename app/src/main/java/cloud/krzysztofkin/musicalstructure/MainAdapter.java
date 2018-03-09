@@ -16,7 +16,7 @@ import android.widget.TextView;
  */
 
 public class MainAdapter extends ArrayAdapter<Track> {
-    Tracks discography;
+    private Tracks discography;
 
     /**
      * Constructor
