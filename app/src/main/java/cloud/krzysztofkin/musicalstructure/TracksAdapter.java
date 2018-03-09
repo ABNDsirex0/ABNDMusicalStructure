@@ -11,6 +11,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 /**
  * Created by Krzysztof Kin on 05.03.2018.
  */
@@ -23,7 +25,7 @@ public class TracksAdapter extends ArrayAdapter<Track> {
      * @param context The current context.
      * @param objects The objects to represent in the ListView.
      */
-    TracksAdapter(@NonNull Context context, @NonNull Tracks objects) {
+    TracksAdapter(@NonNull Context context, @NonNull ArrayList<Track> objects) {
         super(context, 0, objects);
     }
 
@@ -35,17 +37,14 @@ public class TracksAdapter extends ArrayAdapter<Track> {
             listItemView = LayoutInflater.from(getContext()).inflate(R.layout.tracks_item, parent, false);
         }
         final Track track = getItem(position);
-
         TextView albumName;
         albumName = listItemView.findViewById(R.id.album_title);
         albumName.setText(track.getAlbum());
-
         TextView trackName;
         trackName = listItemView.findViewById(R.id.track_title);
         trackName.setText(track.getTitle());
         ImageView playButton;
         playButton = listItemView.findViewById(R.id.play_button);
-
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,7 +55,6 @@ public class TracksAdapter extends ArrayAdapter<Track> {
                 getContext().startActivity(i);
             }
         };
-
         playButton.setOnClickListener(listener);
         return listItemView;
     }

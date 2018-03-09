@@ -10,20 +10,15 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 public class TracksActivity extends AppCompatActivity {
-    Tracks discography;
-    Tracks tracksOnList;
+    ArrayList<Track> tracksOnList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        discography = new Tracks();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tracks_activity);
         Intent i = getIntent();
         String albumName = i.getStringExtra("album");
-        ArrayList<Track> arrayListFromIntent = i.getParcelableArrayListExtra("discography");
-        for (Track track : arrayListFromIntent)
-            discography.add(track);
-        tracksOnList = discography.getTracksFromAlbum(albumName);
+        tracksOnList = i.getParcelableArrayListExtra("discography");
         TracksAdapter adapter = new TracksAdapter(this, tracksOnList);
         ListView listView = findViewById(R.id.track_list);
         listView.setAdapter(adapter);
