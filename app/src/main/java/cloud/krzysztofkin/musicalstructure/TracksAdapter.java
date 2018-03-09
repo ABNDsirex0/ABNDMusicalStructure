@@ -18,6 +18,7 @@ import java.util.ArrayList;
  */
 
 public class TracksAdapter extends ArrayAdapter<Track> {
+    ArrayList<Track> tracksOnList;
 
     /**
      * Constructor
@@ -27,6 +28,7 @@ public class TracksAdapter extends ArrayAdapter<Track> {
      */
     TracksAdapter(@NonNull Context context, @NonNull ArrayList<Track> objects) {
         super(context, 0, objects);
+        tracksOnList = objects;
     }
 
     @NonNull
@@ -49,9 +51,8 @@ public class TracksAdapter extends ArrayAdapter<Track> {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getContext(), PlayerActivity.class);
-                //TODO przekazanie danych do odtwarzacza
-                //i.putParcelableArrayListExtra("discography",discography);
-                //i.putExtra("album",track.getAlbum());
+                i.putParcelableArrayListExtra("tracksOnList", tracksOnList);
+                i.putExtra("trackToPlay",track);
                 getContext().startActivity(i);
             }
         };

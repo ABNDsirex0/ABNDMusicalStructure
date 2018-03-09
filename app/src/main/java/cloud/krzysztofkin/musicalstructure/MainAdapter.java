@@ -48,8 +48,7 @@ public class MainAdapter extends ArrayAdapter<Track> {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getContext(), TracksActivity.class);
-                i.putParcelableArrayListExtra("discography", discography.getTracksFromAlbum(currentAlbum.getAlbum()));
-                i.putExtra("album", currentAlbum.getAlbum());
+                i.putParcelableArrayListExtra("tracksOnList", discography.getTracksFromAlbum(currentAlbum.getAlbum()));
                 getContext().startActivity(i);
             }
         };

@@ -23,14 +23,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void goToTrackList(View view) {
         Intent i = new Intent(this,TracksActivity.class);
-        i.putParcelableArrayListExtra("discography", discography);
-        i.putExtra("album", "");
+        i.putParcelableArrayListExtra("tracksOnList", discography);
         startActivity(i);
     }
 
     public void goToPlay(View view) {
         Intent i = new Intent(this,PlayerActivity.class);
-        i.putParcelableArrayListExtra("discography", discography);
+        i.putParcelableArrayListExtra("tracksOnList", discography);
         startActivity(i);
     }
 }

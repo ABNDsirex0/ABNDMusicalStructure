@@ -17,8 +17,7 @@ public class TracksActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tracks_activity);
         Intent i = getIntent();
-        String albumName = i.getStringExtra("album");
-        tracksOnList = i.getParcelableArrayListExtra("discography");
+        tracksOnList = i.getParcelableArrayListExtra("tracksOnList");
         TracksAdapter adapter = new TracksAdapter(this, tracksOnList);
         ListView listView = findViewById(R.id.track_list);
         listView.setAdapter(adapter);
@@ -31,7 +30,7 @@ public class TracksActivity extends AppCompatActivity {
 
     public void goToPlay(View view) {
         Intent i = new Intent(this, PlayerActivity.class);
-        i.putParcelableArrayListExtra("discography", tracksOnList);
+        i.putParcelableArrayListExtra("tracksOnList", tracksOnList);
         startActivity(i);
     }
 }
