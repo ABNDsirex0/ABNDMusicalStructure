@@ -4,12 +4,16 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 
 import java.util.ArrayList;
 
 public class TracksActivity extends AppCompatActivity {
     ArrayList<Track> tracksOnList;
+    Button playButton;
+    Button albumButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,16 +24,32 @@ public class TracksActivity extends AppCompatActivity {
         TracksAdapter adapter = new TracksAdapter(this, tracksOnList);
         ListView listView = findViewById(R.id.track_list);
         listView.setAdapter(adapter);
-    }
-
-    public void goToMain(View view) {
-        Intent i = new Intent(this, MainActivity.class);
-        startActivity(i);
-    }
-
-    public void goToPlay(View view) {
-        Intent i = new Intent(this, PlayerActivity.class);
-        i.putParcelableArrayListExtra("tracksOnList", tracksOnList);
-        startActivity(i);
+        playButton = findViewById(R.id.play_button);
+        albumButton = findViewById(R.id.album_button);
+        playButton.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Called when a view has been clicked.
+             *
+             * @param v The view that was clicked.
+             */
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(TracksActivity.this, PlayerActivity.class);
+                i.putParcelableArrayListExtra("tracksOnList", tracksOnList);
+                startActivity(i);
+            }
+        });
+        albumButton.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Called when a view has been clicked.
+             *
+             * @param v The view that was clicked.
+             */
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(TracksActivity.this, MainActivity.class);
+                startActivity(i);
+            }
+        });
     }
 }

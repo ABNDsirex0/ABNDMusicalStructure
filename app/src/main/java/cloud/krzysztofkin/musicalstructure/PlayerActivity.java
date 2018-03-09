@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -20,6 +21,8 @@ public class PlayerActivity extends AppCompatActivity {
     TextView counter;
     ProgressBar progressBar;
     ImageView albumCover;
+    Button albumButton;
+    Button tracksButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,25 +38,40 @@ public class PlayerActivity extends AppCompatActivity {
         } else {
             tracksToPlay = tracksOnList;
         }
-
         albumTitle = findViewById(R.id.album_title);
         trackTitle = findViewById(R.id.track_title);
         counter = findViewById(R.id.counter);
         progressBar = findViewById(R.id.progress_bar);
         progressBar.setMax(tracksToPlay.size());
         albumCover = findViewById(R.id.album_cover);
+        albumButton = findViewById(R.id.album_button);
+        tracksButton = findViewById(R.id.tracks_button);
+        albumButton.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Called when a view has been clicked.
+             *
+             * @param v The view that was clicked.
+             */
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(PlayerActivity.this, MainActivity.class);
+                startActivity(i);
+            }
+        });
+        tracksButton.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Called when a view has been clicked.
+             *
+             * @param v The view that was clicked.
+             */
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(PlayerActivity.this, TracksActivity.class);
+                i.putParcelableArrayListExtra("tracksOnList", tracksOnList);
+                startActivity(i);
+            }
+        });
         refreschPlayer();
-    }
-
-    public void goToMain(View view) {
-        Intent i = new Intent(this, MainActivity.class);
-        startActivity(i);
-    }
-
-    public void goToTrackList(View view) {
-        Intent i = new Intent(this, TracksActivity.class);
-        i.putParcelableArrayListExtra("tracksOnList", tracksOnList);
-        startActivity(i);
     }
 
     public void onPrevious(View view) {
