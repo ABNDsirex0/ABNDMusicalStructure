@@ -18,7 +18,7 @@ import java.util.ArrayList;
  */
 
 public class TracksAdapter extends ArrayAdapter<Track> {
-    ArrayList<Track> tracksOnList;
+    private ArrayList<Track> tracksOnList;
 
     /**
      * Constructor
@@ -52,7 +52,7 @@ public class TracksAdapter extends ArrayAdapter<Track> {
             public void onClick(View v) {
                 Intent i = new Intent(getContext(), PlayerActivity.class);
                 i.putParcelableArrayListExtra("tracksOnList", tracksOnList);
-                i.putExtra("trackToPlay",track);
+                i.putExtra("trackToPlay", track);
                 getContext().startActivity(i);
             }
         };

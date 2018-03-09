@@ -5,6 +5,7 @@ import android.os.Parcelable;
 
 /**
  * Created by Krzysztof Kin on 05.03.2018.
+ * class to store data about track
  */
 
 public class Track implements Parcelable {
@@ -22,6 +23,10 @@ public class Track implements Parcelable {
         return album;
     }
 
+    String getCover() {
+        return cover;
+    }
+
     String getTitle() {
         return title;
     }
@@ -31,7 +36,7 @@ public class Track implements Parcelable {
         return (album + " " + title);
     }
 
-    //Parceling part
+    //****************Parceling part**************************
 
     /**
      * Describe the kinds of special objects contained in this Parcelable
@@ -79,7 +84,5 @@ public class Track implements Parcelable {
         cover = in.readString();
     }
 
-    String getCover() {
-        return cover;
-    }
+
 }
