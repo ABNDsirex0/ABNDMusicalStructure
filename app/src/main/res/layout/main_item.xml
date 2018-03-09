@@ -16,15 +16,14 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         tools:src="@drawable/ic_vinyl_red"
-        android:paddingBottom="8dp" />
+        android:paddingBottom="8dp"
+        android:contentDescription="Album cover" />
 
     <TextView
         android:id="@+id/album_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:fontFamily="@font/audiowide"
-        android:textColor="#000000"
-        android:textStyle="bold"
-        tools:text="Album 1" />
+        tools:text="Album 1"
+        style="@style/list_font" />
 </LinearLayout>
