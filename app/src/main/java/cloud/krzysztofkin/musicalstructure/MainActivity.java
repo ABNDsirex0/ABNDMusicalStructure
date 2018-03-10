@@ -31,9 +31,9 @@ public class MainActivity extends AppCompatActivity {
              */
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, TracksActivity.class);
-                i.putParcelableArrayListExtra("tracksOnList", discography);
-                startActivity(i);
+                Intent tracksIntent = new Intent(MainActivity.this, TracksActivity.class);
+                tracksIntent.putParcelableArrayListExtra("tracksOnList", discography);
+                startActivity(tracksIntent);
             }
         });
         playButton = findViewById(R.id.play_button);
@@ -45,9 +45,9 @@ public class MainActivity extends AppCompatActivity {
              */
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, PlayerActivity.class);
-                i.putParcelableArrayListExtra("tracksOnList", discography);
-                startActivity(i);
+                Intent playIntent = new Intent(MainActivity.this, PlayerActivity.class);
+                playIntent.putParcelableArrayListExtra("tracksOnList", discography);
+                startActivity(playIntent);
             }
         });
     }
