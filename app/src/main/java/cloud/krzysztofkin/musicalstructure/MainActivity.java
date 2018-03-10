@@ -19,9 +19,9 @@ public class MainActivity extends AppCompatActivity {
         //create discography with sample data
         discography = new Tracks();
         discography.addSampleData(21, 5);
-        MainAdapter adapter = new MainAdapter(this, discography);
-        GridView listView = findViewById(R.id.album_list);
-        listView.setAdapter(adapter);
+        AlbumAdapter adapter = new AlbumAdapter(this, discography);
+        GridView albumGridView = findViewById(R.id.album_grid);
+        albumGridView.setAdapter(adapter);
         tracksButton = findViewById(R.id.tracks_button);
         tracksButton.setOnClickListener(new View.OnClickListener() {
             /**

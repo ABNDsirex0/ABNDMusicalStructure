@@ -8,12 +8,12 @@
     tools:context="cloud.krzysztofkin.musicalstructure.MainActivity">
 
     <GridView
-        android:id="@+id/album_list"
+        android:id="@+id/album_grid"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:numColumns="3"
-        tools:listitem="@layout/main_item" />
+        tools:listitem="@layout/album_item" />
 
     <LinearLayout
         android:layout_width="match_parent"

@@ -39,14 +39,14 @@ public class TracksAdapter extends ArrayAdapter<Track> {
             listItemView = LayoutInflater.from(getContext()).inflate(R.layout.tracks_item, parent, false);
         }
         final Track track = getItem(position);
-        TextView albumName;
-        albumName = listItemView.findViewById(R.id.album_title);
-        albumName.setText(track.getAlbum());
-        TextView trackName;
-        trackName = listItemView.findViewById(R.id.track_title);
-        trackName.setText(track.getTitle());
-        ImageView playButton;
-        playButton = listItemView.findViewById(R.id.play_button);
+        TextView albumNameTextView;
+        albumNameTextView = listItemView.findViewById(R.id.album_title);
+        albumNameTextView.setText(track.getAlbum());
+        TextView trackNameTextView;
+        trackNameTextView = listItemView.findViewById(R.id.track_title);
+        trackNameTextView.setText(track.getTitle());
+        ImageView playButtonImageView;
+        playButtonImageView = listItemView.findViewById(R.id.play_button);
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,7 +56,7 @@ public class TracksAdapter extends ArrayAdapter<Track> {
                 getContext().startActivity(playIntent);
             }
         };
-        playButton.setOnClickListener(listener);
+        playButtonImageView.setOnClickListener(listener);
         return listItemView;
     }
 }

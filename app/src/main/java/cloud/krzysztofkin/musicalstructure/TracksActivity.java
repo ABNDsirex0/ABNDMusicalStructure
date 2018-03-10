@@ -19,11 +19,11 @@ public class TracksActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tracks_activity);
-        Intent thisIntent = getIntent();
-        tracksOnList = thisIntent.getParcelableArrayListExtra("tracksOnList");
+        Intent incomingIntent = getIntent();
+        tracksOnList = incomingIntent.getParcelableArrayListExtra("tracksOnList");
         TracksAdapter adapter = new TracksAdapter(this, tracksOnList);
-        ListView listView = findViewById(R.id.track_list);
-        listView.setAdapter(adapter);
+        ListView tracksListView = findViewById(R.id.track_list);
+        tracksListView.setAdapter(adapter);
         playButton = findViewById(R.id.play_button);
         albumButton = findViewById(R.id.album_button);
         playButton.setOnClickListener(new View.OnClickListener() {

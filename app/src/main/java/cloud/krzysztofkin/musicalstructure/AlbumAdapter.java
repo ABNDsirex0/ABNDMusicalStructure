@@ -15,7 +15,7 @@ import android.widget.TextView;
  * Created by Krzysztof Kin on 05.03.2018.
  */
 
-public class MainAdapter extends ArrayAdapter<Track> {
+public class AlbumAdapter extends ArrayAdapter<Track> {
     private Tracks discography;
 
     /**
@@ -24,7 +24,7 @@ public class MainAdapter extends ArrayAdapter<Track> {
      * @param context The current context.
      * @param objects The objects to represent in the ListView.
      */
-    MainAdapter(@NonNull Context context, @NonNull Tracks objects) {
+    AlbumAdapter(@NonNull Context context, @NonNull Tracks objects) {
         super(context, 0, objects.getAlbums());
         discography = objects;
     }
@@ -32,18 +32,18 @@ public class MainAdapter extends ArrayAdapter<Track> {
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        View listItemView = convertView;
-        if (listItemView == null) {
-            listItemView = LayoutInflater.from(getContext()).inflate(R.layout.main_item, parent, false);
+        View gridItemView = convertView;
+        if (gridItemView == null) {
+            gridItemView = LayoutInflater.from(getContext()).inflate(R.layout.album_item, parent, false);
         }
         final Track currentAlbum = getItem(position);
-        TextView albumName;
-        albumName = listItemView.findViewById(R.id.album_name);
-        albumName.setText(currentAlbum.getAlbum());
-        ImageView albumCover;
-        albumCover = listItemView.findViewById(R.id.album_cover);
+        TextView albumNameTextView;
+        albumNameTextView = gridItemView.findViewById(R.id.album_name);
+        albumNameTextView.setText(currentAlbum.getAlbum());
+        ImageView albumCoverImageView;
+        albumCoverImageView = gridItemView.findViewById(R.id.album_cover);
         int coverId = parent.getResources().getIdentifier(currentAlbum.getCover(), "drawable", getContext().getPackageName());
-        albumCover.setImageResource(coverId);
+        albumCoverImageView.setImageResource(coverId);
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,8 +52,8 @@ public class MainAdapter extends ArrayAdapter<Track> {
                 getContext().startActivity(tracksIntent);
             }
         };
-        albumCover.setOnClickListener(listener);
-        albumName.setOnClickListener(listener);
-        return listItemView;
+        albumCoverImageView.setOnClickListener(listener);
+        albumNameTextView.setOnClickListener(listener);
+        return gridItemView;
     }
 }

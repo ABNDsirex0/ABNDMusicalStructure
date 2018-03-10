@@ -16,11 +16,11 @@ public class PlayerActivity extends AppCompatActivity {
     private ArrayList<Track> tracksOnList;
     private ArrayList<Track> tracksToPlay;
     int currentTrack;
-    TextView albumTitle;
-    TextView trackTitle;
-    TextView counter;
+    TextView albumTitleTextView;
+    TextView trackTitleTextView;
+    TextView counterTextView;
     ProgressBar progressBar;
-    ImageView albumCover;
+    ImageView albumCoverImageView;
     Button albumButton;
     Button tracksButton;
 
@@ -29,21 +29,21 @@ public class PlayerActivity extends AppCompatActivity {
         Track track;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_player);
-        Intent thisIntent = getIntent();
-        tracksOnList = thisIntent.getParcelableArrayListExtra("tracksOnList");
-        if (thisIntent.hasExtra("trackToPlay")) {
-            track = thisIntent.getParcelableExtra("trackToPlay");
+        Intent incomingIntent = getIntent();
+        tracksOnList = incomingIntent.getParcelableArrayListExtra("tracksOnList");
+        if (incomingIntent.hasExtra("trackToPlay")) {
+            track = incomingIntent.getParcelableExtra("trackToPlay");
             tracksToPlay = new ArrayList<>();
             tracksToPlay.add(track);
         } else {
             tracksToPlay = tracksOnList;
         }
-        albumTitle = findViewById(R.id.album_title);
-        trackTitle = findViewById(R.id.track_title);
-        counter = findViewById(R.id.counter);
+        albumTitleTextView = findViewById(R.id.album_title);
+        trackTitleTextView = findViewById(R.id.track_title);
+        counterTextView = findViewById(R.id.counter);
         progressBar = findViewById(R.id.progress_bar);
         progressBar.setMax(tracksToPlay.size());
-        albumCover = findViewById(R.id.album_cover);
+        albumCoverImageView = findViewById(R.id.album_cover);
         albumButton = findViewById(R.id.album_button);
         tracksButton = findViewById(R.id.tracks_button);
         albumButton.setOnClickListener(new View.OnClickListener() {
@@ -96,10 +96,10 @@ public class PlayerActivity extends AppCompatActivity {
 
     private void refreschPlayer() {
         int coverId = getResources().getIdentifier(tracksToPlay.get(currentTrack).getCover(), "drawable", getPackageName());
-        albumCover.setImageResource(coverId);
-        albumTitle.setText(tracksToPlay.get(currentTrack).getAlbum());
-        trackTitle.setText((tracksToPlay.get(currentTrack).getTitle()));
-        counter.setText(currentTrack + 1 + "/" + tracksToPlay.size());
+        albumCoverImageView.setImageResource(coverId);
+        albumTitleTextView.setText(tracksToPlay.get(currentTrack).getAlbum());
+        trackTitleTextView.setText((tracksToPlay.get(currentTrack).getTitle()));
+        counterTextView.setText(currentTrack + 1 + "/" + tracksToPlay.size());
         progressBar.setProgress(currentTrack + 1);
     }
 }
