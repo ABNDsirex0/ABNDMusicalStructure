@@ -47,9 +47,9 @@ public class MainAdapter extends ArrayAdapter<Track> {
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent playIntent = new Intent(getContext(), TracksActivity.class);
-                playIntent.putParcelableArrayListExtra("tracksOnList", discography.getTracksFromAlbum(currentAlbum.getAlbum()));
-                getContext().startActivity(playIntent);
+                Intent tracksIntent = new Intent(getContext(), TracksActivity.class);
+                tracksIntent.putParcelableArrayListExtra("tracksOnList", discography.getTracksFromAlbum(currentAlbum.getAlbum()));
+                getContext().startActivity(tracksIntent);
             }
         };
         albumCover.setOnClickListener(listener);
