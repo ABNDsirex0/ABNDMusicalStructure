@@ -29,10 +29,10 @@ public class PlayerActivity extends AppCompatActivity {
         Track track;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_player);
-        Intent i = getIntent();
-        tracksOnList = i.getParcelableArrayListExtra("tracksOnList");
-        if (i.hasExtra("trackToPlay")) {
-            track = i.getParcelableExtra("trackToPlay");
+        Intent thisIntent = getIntent();
+        tracksOnList = thisIntent.getParcelableArrayListExtra("tracksOnList");
+        if (thisIntent.hasExtra("trackToPlay")) {
+            track = thisIntent.getParcelableExtra("trackToPlay");
             tracksToPlay = new ArrayList<>();
             tracksToPlay.add(track);
         } else {
@@ -54,8 +54,8 @@ public class PlayerActivity extends AppCompatActivity {
              */
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(PlayerActivity.this, MainActivity.class);
-                startActivity(i);
+                Intent albumIntent = new Intent(PlayerActivity.this, MainActivity.class);
+                startActivity(albumIntent);
             }
         });
         tracksButton.setOnClickListener(new View.OnClickListener() {
@@ -66,9 +66,9 @@ public class PlayerActivity extends AppCompatActivity {
              */
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(PlayerActivity.this, TracksActivity.class);
-                i.putParcelableArrayListExtra("tracksOnList", tracksOnList);
-                startActivity(i);
+                Intent tracksIntent = new Intent(PlayerActivity.this, TracksActivity.class);
+                tracksIntent.putParcelableArrayListExtra("tracksOnList", tracksOnList);
+                startActivity(tracksIntent);
             }
         });
         refreschPlayer();
