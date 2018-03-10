@@ -50,10 +50,10 @@ public class TracksAdapter extends ArrayAdapter<Track> {
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getContext(), PlayerActivity.class);
-                i.putParcelableArrayListExtra("tracksOnList", tracksOnList);
-                i.putExtra("trackToPlay", track);
-                getContext().startActivity(i);
+                Intent playIntent = new Intent(getContext(), PlayerActivity.class);
+                playIntent.putParcelableArrayListExtra("tracksOnList", tracksOnList);
+                playIntent.putExtra("trackToPlay", track);
+                getContext().startActivity(playIntent);
             }
         };
         playButton.setOnClickListener(listener);
